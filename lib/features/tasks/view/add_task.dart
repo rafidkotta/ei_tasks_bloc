@@ -31,7 +31,7 @@ class _AddTaskState extends State<AddTask> {
       floatingActionButton: FloatingActionButton.extended(
         onPressed: (){
           if(formKey.currentState!.validate()){
-            final task =  Task(id: shortid.generate(), title: titleController.text, description: descriptionController.text, assignedTo: "");
+            final task =  Task(id: shortid.generate(), title: titleController.text, description: descriptionController.text, assignedTo: selectedEmployee ?? "");
             context.read<TasksBloc>().add(TaskAdd(task: task));
             Navigator.of(context).pop();
           }
