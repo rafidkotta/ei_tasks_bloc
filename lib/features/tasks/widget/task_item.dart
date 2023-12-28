@@ -19,12 +19,19 @@ class TaskItem extends StatelessWidget{
                 children: [
                   Text(task.title,style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
                   Text(task.description,maxLines: 3,),
-                  Row(
-                    children: [
-                      const Icon(Icons.account_circle),
-                      const SizedBox(width: 8,),
-                      Text(task.assignedTo),
-                    ],
+                  Card(
+                    margin: EdgeInsets.zero,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 3),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const Icon(Icons.account_circle),
+                          const SizedBox(width: 8,),
+                          Text(task.assignedTo),
+                        ],
+                      ),
+                    ),
                   ),
                 ],
               ),
